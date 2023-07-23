@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Amazon Review Summarizer",
+  "version": "1.0",
+  "description": "Amazon Review Summarizer",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "type": "module"
+}
